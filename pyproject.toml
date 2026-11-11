@@ -1,0 +1,80 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "alpha-sentinel"
+version = "0.2.0"
+description = "Alpha Sentinel - AD / Linux attack monitor (Python port)"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{name = "Alpha Sentinel Team"}]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: System Administrators",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Security",
+    "Topic :: System :: Monitoring",
+]
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "pyyaml>=6.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "httpx>=0.25.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+    "pyinstaller>=5.13.0",
+]
+test = [
+    "pytest>=7.0.0",
+    "httpx>=0.25.0",
+]
+
+[project.scripts]
+alpha-sentinel = "alpha_sentinel.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["alpha_sentinel*"]
+
+[tool.setuptools.package-data]
+alpha_sentinel = ["server/static/**/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests/py"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = "-q --tb=short"
+
+[tool.pyinstaller]
+hidden-imports = [
+    "alpha_sentinel.cli",
+    "alpha_sentinel.platform",
+    "alpha_sentinel.models",
+    "alpha_sentinel.normalize",
+    "alpha_sentinel.catalog",
+    "alpha_sentinel.engine",
+    "alpha_sentinel.rules",
+    "alpha_sentinel.rule_meta",
+    "alpha_sentinel.collectors",
+    "alpha_sentinel.store",
+    "alpha_sentinel.server",
+    "alpha_sentinel.outputs",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
