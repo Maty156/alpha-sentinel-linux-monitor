@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ALPHA Sentinel - sign in</title>
+<link rel="icon" href="data:,">
+<!-- no inline style or script elements, and no on* handler (CSP script-src 'self') -->
+<link rel="stylesheet" href="/css/tokens.css">
+<link rel="stylesheet" href="/css/base.css">
+<link rel="stylesheet" href="/css/components.css">
+<link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+<div class="login-wrap">
+  <form class="login-card" id="loginForm">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+        <path d="M12 2l8 3v6c0 5-3.4 9.3-8 11-4.6-1.7-8-6-8-11V5l8-3z"/>
+        <circle cx="12" cy="11" r="3.2"/>
+        <path d="M12 4.6v2.2M12 15.2v2.2M5.6 11h2.2M16.2 11h2.2"/>
+      </svg>
+      <span class="brand-name">Alpha Sentinel</span>
+    </div>
+    <div class="login-sub">Sign in to the detection console</div>
+
+    <div class="login-error" id="loginError" role="alert"></div>
+
+    <div class="login-field">
+      <label for="username">Username</label>
+      <input class="field" id="username" name="username" type="text" autocomplete="username" required autofocus>
+    </div>
+    <div class="login-field">
+      <label for="password">Password</label>
+      <input class="field" id="password" name="password" type="password" autocomplete="current-password" required>
+    </div>
+
+    <div class="login-actions">
+      <button class="btn btn-primary" id="loginButton" type="submit">Sign in</button>
+    </div>
+    <div class="login-foot">Create an account with: alpha-sentinel create-admin</div>
+  </form>
+</div>
+<script src="/login.js"></script>
+</body>
+</html>
