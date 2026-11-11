@@ -1,0 +1,7 @@
+# Alpha Sentinel configuration (the only key currently read is log_sources).
+# Place at /etc/alpha-sentinel/config.yaml, or pass --config PATH.
+log_sources:
+  - type: syslog            # Debian/Ubuntu: /var/log/auth.log   RHEL/Fedora: /var/log/secure
+    path: /var/log/auth.log
+  - type: journal           # systemd journal (units are validated; no shell is involved)
+    units: [sshd, sudo]
