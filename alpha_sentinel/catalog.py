@@ -1,0 +1,93 @@
+"""Rule catalog for Alpha Sentinel - Windows rule keys."""
+
+# Ordered list of all 36 Windows rule keys (must match PS catalog exactly)
+ALL_WINDOWS_RULE_KEYS = [
+    "password_spraying",
+    "brute_force_single_account",
+    "kerberos_preauth_spraying",
+    "ntlm_failed_auth",
+    "account_lockout_storm",
+    "privilege_escalation",
+    "account_created",
+    "account_control_changed",
+    "account_enabled_disabled",
+    "password_reset_by_admin",
+    "group_membership_removed",
+    "account_deleted",
+    "kerberoasting",
+    "asrep_roasting",
+    "dcsync_replication",
+    "ldap_recon",
+    "suspicious_remote_logon",
+    "explicit_credential_logon",
+    "service_abuse",
+    "scheduled_task_created",
+    "registry_persistence",
+    "log_tampering",
+    "audit_policy_changed",
+    "eventlog_service_stopped",
+    "defender_disabled",
+    "firewall_disabled",
+    "anonymous_smb_session",
+    "firewall_rule_modified",
+    "system_time_changed",
+    "special_privileges_assigned",
+    "gpo_or_admin_object_modified",
+    "computer_account_abuse",
+    "suspicious_process_creation",
+    "powershell_scriptblock",
+    "dsrm_password_set",
+    "pass_the_hash_logon",
+]
+
+
+# Rule metadata template (to be expanded in Stage 2)
+RULE_META_TEMPLATE = {
+    "key": "",
+    "title": "",
+    "severity": "",
+    "mitre": "",
+    "category": "",
+    "event_ids": [],
+    "dedupe_minutes": 15,
+    "description": "",
+    "remediation": "",
+    "audit_subcategory": "",
+}
+
+# Linux rule keys
+ALL_LINUX_RULE_KEYS = [
+    "ssh_bruteforce",
+    "ssh_key_auth",
+    "ssh_success_after_failures",
+    "root_ssh_login",
+    "user_account_changed",
+    "ssh_authorized_keys_modified",
+    "sshd_config_modified",
+    "cron_or_systemd_persistence",
+    "sudo_privilege_escalation",
+    "suspicious_command_execution",
+]
+
+LINUX_RULE_META = {
+    "ssh_bruteforce": {"title": "SSH Brute Force", "severity": "High", "mitre_id": "T1110.001", "mitre_name": "Brute Force: Password Guessing", "category": "Credential Access",
+        "remediation": "Block the source IP, disable password SSH logins in favour of keys, and install fail2ban or equivalent rate limiting."},
+    "ssh_key_auth": {"title": "SSH Key-Based Login", "severity": "Medium", "mitre_id": "T1078.004", "mitre_name": "Valid Accounts", "category": "Lateral Movement",
+        "remediation": "Confirm the key belongs to the account owner and that the source host is expected."},
+    "ssh_success_after_failures": {"title": "SSH Login Succeeded After Repeated Failures", "severity": "Critical", "mitre_id": "T1110.001", "mitre_name": "Brute Force: Password Guessing", "category": "Credential Access",
+        "remediation": "Treat the account as compromised: kill its sessions, reset its credentials, and review what it ran after logging in."},
+    "root_ssh_login": {"title": "Direct Root SSH Login", "severity": "Critical", "mitre_id": "T1078", "mitre_name": "Valid Accounts", "category": "Initial Access",
+        "remediation": "Set PermitRootLogin no in sshd_config and use named accounts with sudo."},
+    "user_account_changed": {"title": "User Account Created or Modified", "severity": "High", "mitre_id": "T1098", "mitre_name": "Account Manipulation", "category": "Persistence",
+        "remediation": "Verify the change was authorised and review /etc/passwd, /etc/shadow and group membership for backdoor accounts."},
+    "ssh_authorized_keys_modified": {"title": "SSH authorized_keys Modified", "severity": "High", "mitre_id": "T1098.004", "mitre_name": "Account Manipulation: SSH Authorized Keys", "category": "Persistence",
+        "remediation": "Inspect the authorized_keys file for unknown keys and remove them."},
+    "sshd_config_modified": {"title": "sshd_config Modified", "severity": "High", "mitre_id": "T1562", "mitre_name": "Impair Defenses", "category": "Defense Evasion",
+        "remediation": "Diff sshd_config against the approved baseline and restore it."},
+    "cron_or_systemd_persistence": {"title": "Cron or systemd Persistence", "severity": "High", "mitre_id": "T1053.003", "mitre_name": "Scheduled Task/Job: Cron", "category": "Persistence",
+        "remediation": "Review the new cron entry or unit file and remove it if it was not authorised."},
+    "sudo_privilege_escalation": {"title": "Sudo Privilege Escalation", "severity": "Medium", "mitre_id": "T1548.003", "mitre_name": "Abuse Elevation Control Mechanism: Sudo", "category": "Privilege Escalation",
+        "remediation": "Review the sudoers policy and what the user ran as root."},
+    "suspicious_command_execution": {"title": "Suspicious Command Execution", "severity": "High", "mitre_id": "T1059", "mitre_name": "Command and Scripting Interpreter", "category": "Execution",
+        "remediation": "Investigate the command, its parent process and the account that ran it."},
+}
