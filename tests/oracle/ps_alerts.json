@@ -1,0 +1,279 @@
+{
+  "account-created-4720-computer.xml": [],
+  "account-created-4720-user.xml": [
+    {
+      "RuleKey": "account_created",
+      "Severity": "High",
+      "Account": "attacker1",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "asrep-4768-single-request.xml": [
+    {
+      "RuleKey": "asrep_roasting",
+      "Severity": "High",
+      "Account": "svc-legacy",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "computer-4741-admin-create-benign.xml": [],
+  "computer-4741-nonadmin-create.xml": [
+    {
+      "RuleKey": "computer_account_abuse",
+      "Severity": "Medium",
+      "Account": "WKS101$",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "computer-4742-delegation-change.xml": [
+    {
+      "RuleKey": "computer_account_abuse",
+      "Severity": "High",
+      "Account": "SVR01$",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "dcsync-4662-dc-machine-account.xml": [],
+  "dcsync-4662-properties.xml": [
+    {
+      "RuleKey": "dcsync_replication",
+      "Severity": "Critical",
+      "Account": "",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "dsrm-4794.xml": [
+    {
+      "RuleKey": "dsrm_password_set",
+      "Severity": "Critical",
+      "Account": "Administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "eventlog-1100-service-stopped.xml": [
+    {
+      "RuleKey": "eventlog_service_stopped",
+      "Severity": "Medium",
+      "Account": "",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "firewall-4950-benign-settings.xml": [],
+  "firewall-4950-profile-disabled.xml": [
+    {
+      "RuleKey": "firewall_disabled",
+      "Severity": "Critical",
+      "Account": "",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "gpo-5136-adminsdholder-modified.xml": [
+    {
+      "RuleKey": "gpo_or_admin_object_modified",
+      "Severity": "Critical",
+      "Account": "administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "gpo-5136-gplink-modified.xml": [
+    {
+      "RuleKey": "gpo_or_admin_object_modified",
+      "Severity": "High",
+      "Account": "administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "gpo-5136-group-policy-modified.xml": [
+    {
+      "RuleKey": "gpo_or_admin_object_modified",
+      "Severity": "High",
+      "Account": "administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "gpo-5136-machine-account-benign.xml": [],
+  "gpo-5136-sidhistory-modified.xml": [
+    {
+      "RuleKey": "gpo_or_admin_object_modified",
+      "Severity": "Critical",
+      "Account": "administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "kerberoasting-4769-failure.xml": [],
+  "kerberoasting-4769-mixed.xml": [
+    {
+      "RuleKey": "kerberoasting",
+      "Severity": "Medium",
+      "Account": "jsmith",
+      "Host": "DC01.corp.local"
+    },
+    {
+      "RuleKey": "kerberoasting",
+      "Severity": "Medium",
+      "Account": "jsmith",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "kerberoasting-4769-sweep.xml": [
+    {
+      "RuleKey": "kerberoasting",
+      "Severity": "Medium",
+      "Account": "jsmith",
+      "Host": "DC01.corp.local"
+    },
+    {
+      "RuleKey": "kerberoasting",
+      "Severity": "Medium",
+      "Account": "jsmith",
+      "Host": "DC01.corp.local"
+    },
+    {
+      "RuleKey": "kerberoasting",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "logon-4624-anonymous-smb.xml": [
+    {
+      "RuleKey": "anonymous_smb_session",
+      "Severity": "Medium",
+      "Account": "ANONYMOUS LOGON",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "logon-4624-benign-type3-ntlm.xml": [
+    {
+      "RuleKey": "suspicious_remote_logon",
+      "Severity": "Medium",
+      "Account": "administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "logon-4624-domain-admin-rdp.xml": [
+    {
+      "RuleKey": "suspicious_remote_logon",
+      "Severity": "High",
+      "Account": "DA_john",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "logon-4624-named-network-logon.xml": [
+    {
+      "RuleKey": "suspicious_remote_logon",
+      "Severity": "Medium",
+      "Account": "admin_connect",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "logon-4624-pth-type3-ntlm.xml": [
+    {
+      "RuleKey": "pass_the_hash_logon",
+      "Severity": "Critical",
+      "Account": "administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "logon-4624-pth-type9.xml": [
+    {
+      "RuleKey": "pass_the_hash_logon",
+      "Severity": "Critical",
+      "Account": "administrator",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "logon-4624-service-account-type3.xml": [],
+  "ntlm-4776-failed-validations.xml": [
+    {
+      "RuleKey": "ntlm_failed_auth",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "ntlm-4776-successful-validations.xml": [],
+  "privesc-4728-two-accounts.xml": [
+    {
+      "RuleKey": "privilege_escalation",
+      "Severity": "Critical",
+      "Account": "CN=userA,CN=Users,DC=corp,DC=local",
+      "Host": "DC01.corp.local"
+    },
+    {
+      "RuleKey": "privilege_escalation",
+      "Severity": "Critical",
+      "Account": "CN=userB,CN=Users,DC=corp,DC=local",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "process-4688-benign.xml": [],
+  "process-4688-ntdsutil.xml": [
+    {
+      "RuleKey": "suspicious_process_creation",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "process-4688-reg-save.xml": [
+    {
+      "RuleKey": "suspicious_process_creation",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "process-4688-vssadmin.xml": [
+    {
+      "RuleKey": "suspicious_process_creation",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "ps-4104-amsiutils.xml": [
+    {
+      "RuleKey": "powershell_scriptblock",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "ps-4104-base64-iex.xml": [
+    {
+      "RuleKey": "powershell_scriptblock",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "ps-4104-benign.xml": [],
+  "ps-4104-mimikatz.xml": [
+    {
+      "RuleKey": "powershell_scriptblock",
+      "Severity": "High",
+      "Account": "jsmith",
+      "Host": "DC01.selftest.local"
+    }
+  ],
+  "uac-4738-already-disabled.xml": [],
+  "uac-4738-delegation-granted.xml": [
+    {
+      "RuleKey": "account_control_changed",
+      "Severity": "High",
+      "Account": "svc-web",
+      "Host": "DC01.corp.local"
+    }
+  ],
+  "uac-4738-delegation-unchanged.xml": [],
+  "uac-4738-no-net-change.xml": [],
+  "uac-4738-preauth-removed.xml": [
+    {
+      "RuleKey": "account_control_changed",
+      "Severity": "Critical",
+      "Account": "jdoe",
+      "Host": "DC01.corp.local"
+    }
+  ]
+}
