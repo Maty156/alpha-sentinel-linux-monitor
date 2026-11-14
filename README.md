@@ -43,6 +43,7 @@ login-protected web dashboard.
 | Matyas Abreham (Team Lead) | [Watch](https://drive.google.com/file/d/1pql3-JQwtKaJQBLpZVIlGo1rbPO8A_a9/view?usp=sharing) |
 | Surafel Ketema | [Watch](https://drive.google.com/file/d/18V6csm8dpqQxKfkVmqzdrMfwt_Z613_I/view?usp=sharing) |
 | Omer Muzemil (Umer) | [Watch](https://drive.google.com/file/d/143rWGEcts4yoHhREwQLdP1QNYCLlSqBY/view?usp=drive_link) |
+| Nathnail Wassie (Nati) | [Watch](https://drive.google.com/file/d/1GwK3IsIw8Cb_TRoDXwGN6ZjzEw_OYbtW/view?usp=drive_link) |
 
 **Team**
 
