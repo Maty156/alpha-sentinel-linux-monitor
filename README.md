@@ -24,7 +24,7 @@ login-protected web dashboard.
 - **Dashboard behind a login**: overview, alerts with triage, events, hosts, rules, users and log sources
   in Settings, rule self-test and health checks.
 
-**Video presentation:** _add your link here_
+**Video presentation:** [https://drive.google.com/file/d/1pql3-JQwtKaJQBLpZVIlGo1rbPO8A_a9/view?usp=sharing](https://drive.google.com/file/d/1pql3-JQwtKaJQBLpZVIlGo1rbPO8A_a9/view?usp=sharing)
 
 **Team**
 
