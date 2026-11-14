@@ -4,6 +4,18 @@ Linux / AD attack monitor with a web dashboard, built for the **Alpha Sentinel**
 This is the **Linux and Python edition**. The Windows PowerShell edition for Active Directory domain
 controllers is in the sister repository: [Maty156/alpha-sentinel](https://github.com/Maty156/alpha-sentinel).
 
+## The project: three repositories
+
+Alpha Sentinel is built as three parts, each in its own repository:
+
+| Repository | What it is |
+|---|---|
+| [alpha-sentinel-linux-monitor](https://github.com/Maty156/alpha-sentinel-linux-monitor) | **This repo.** Linux and Python edition of the monitor, with the dashboard and the Wolf AI assistant. |
+| [alpha-sentinel](https://github.com/Maty156/alpha-sentinel) | Windows edition: one PowerShell script for Active Directory domain controllers, with its own dashboard and Wolf. |
+| [alpha](https://github.com/Maty156/alpha) | The web portal that connects clients with admins: requests, messages, reports and certificates. |
+
+They are separate on purpose: Windows and Linux have different logs, collectors and rules, so keeping them apart makes each one easier to test and debug.
+
 ## Project information
 
 **Purpose.** Tools such as Wazuh are powerful but hard for students and small organisations to install
