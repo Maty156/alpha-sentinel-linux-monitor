@@ -1,4 +1,47 @@
-# Alpha Sentinel - Python port (v0.2.0)
+# ALPHA Sentinel for Linux - Python attack monitor (v0.2.0)
+
+Linux / AD attack monitor with a web dashboard, built for the **Alpha Sentinel** graduation project.
+This is the **Linux and Python edition**. The Windows PowerShell edition for Active Directory domain
+controllers is in the sister repository: [Maty156/alpha-sentinel](https://github.com/Maty156/alpha-sentinel).
+
+## Project information
+
+**Purpose.** Tools such as Wazuh are powerful but hard for students and small organisations to install
+and learn. Alpha Sentinel is a simpler monitor: it reads the logs of a Linux server, detects common
+attacks, explains them in plain language and suggests what to do - in one small Python package with a
+login-protected web dashboard.
+
+**Main features**
+- **10 Linux detection rules** mapped to MITRE ATT&CK: SSH brute force, login success after repeated
+  failures, direct root SSH login, SSH key login, user account changes, `authorized_keys` and
+  `sshd_config` edits, cron / systemd persistence, sudo escalation, suspicious commands.
+- **36 Windows rules** ported from the PowerShell edition, usable through `replay` on exported event XML.
+- **Wolf, the AI assistant**: answers from the monitor's own data (alerts, coverage, rules). Works offline
+  with built-in answers, or with a Gemini / OpenAI-compatible provider. The API key is stored on the
+  server only and never sent to the browser. Chats are saved and have their own page.
+- **Response playbook on every alert** with real Linux commands (block the IP with `ufw` / `iptables`,
+  lock an account, review `auth.log`). Values from the logs are validated before they go into a command.
+- **Dashboard behind a login**: overview, alerts with triage, events, hosts, rules, users and log sources
+  in Settings, rule self-test and health checks.
+
+**Video presentation:** _add your link here_
+
+**Team**
+
+| # | Full name | CTC ID | Role |
+|---|---|---|---|
+| 1 | Matyas Abreham | CTC-207-26 | Project Lead & Lead Developer (architecture, detection engine, dashboard, testing, documentation) |
+| 2 | Nathnail Wassie | CTC-7656-26 | Frontend Developer |
+| 3 | Abu Geleta | CTC-4372-26 | Backend Developer |
+| 4 | Omer Muzemil | CTC-7061-26 | Backend Developer, Front Developer, Tester, Presenter |
+| 5 | Surafel Ketema | CTC-378-26 | Frontend Developer |
+| 6 | Eyorika Kassaye | CTC-6619-26 | Tester |
+
+*Built with AI-assisted development (Hermes and Claude). The team lead directed the work, tested it on
+a lab, and reviewed every change.*
+
+---
+
 
 AD / Linux attack monitor with a web dashboard. It reads Windows event exports (replay) and Linux
 auth logs / the systemd journal, detects attacks, and shows them in a login-protected dashboard.
