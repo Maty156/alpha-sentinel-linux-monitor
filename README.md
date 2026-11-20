@@ -44,6 +44,7 @@ login-protected web dashboard.
 | Surafel Ketema | [Watch](https://drive.google.com/file/d/18V6csm8dpqQxKfkVmqzdrMfwt_Z613_I/view?usp=sharing) |
 | Omer Muzemil (Umer) | [Watch](https://drive.google.com/file/d/143rWGEcts4yoHhREwQLdP1QNYCLlSqBY/view?usp=drive_link) |
 | Nathnail Wassie (Nati) | [Watch](https://drive.google.com/file/d/1GwK3IsIw8Cb_TRoDXwGN6ZjzEw_OYbtW/view?usp=drive_link) |
+| Eyorika Kassaye | [Watch](https://drive.google.com/file/d/1cM-D_N3tRoHcMu7NMTGCxdQzKFFfiIWT/view?usp=drivesdk) |
 
 **Team**
 
